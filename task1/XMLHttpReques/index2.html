@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+</head>
+<body>
+	<button onclick="getJSON()" >Загрузить файл.json!</button>
+	
+	  <script>
+	    function getJSON() {
+
+	    	return new Promise(function(resolve, reject) {
+
+			    var xhr = new XMLHttpRequest();
+			    xhr.open('GET', 'http://api.open-notify.org/astros.json', true);
+
+		    	xhr.onload = function() {
+		    		if (this.status == 200) {
+		        	var data = JSON.parse(this.response);
+		        	console.log(this.response);
+		        	resolve(data);
+		      	} else {
+		        	var error = new Error(this.statusText);
+			        error.code = this.status;
+			        reject(error);
+			    }
+			};
+
+	    	xhr.onerror = function() {
+    	  		reject(new Error("Network Error"));
+    		};
+
+    		xhr.send();
+  		});
+
+	    }
+		
+	  </script>
+</body>
+</html>

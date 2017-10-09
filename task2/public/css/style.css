@@ -1,0 +1,57 @@
+body {
+	background: url(../image/mars.jpg);
+	background-size: cover;
+	color: white;
+}
+
+.main {
+	width: 50%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.main__head {
+	font-size: 5em;
+	text-transform: uppercase;
+}
+
+.main__data {
+	font-size: 10em;
+}
+
+.main__date {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+.main__button {
+	font-size: 2em;
+	text-transform: uppercase;
+	margin: 20px 30px;
+	cursor: pointer;
+}
+
+.preloader{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #777;
+	z-index: 30;
+}
+ 
+.preloader__text {
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 48%;
+	margin-left: -125px;
+	margin-top: -75px;
+	color: #000;
+	font-size: 40px;
+	letter-spacing: -2px;
+	text-align: center;
+	line-height: 35px;
+}
